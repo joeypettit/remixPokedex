@@ -11,8 +11,8 @@ datasource db {
 }
 
 model Pokemon {
-  id        String    @id @default(cuid())
-  pokeId    Int       @unique
+  cuid      String    @id @default(cuid())
+  id        Int       @unique
   name      String
   height    Int
   weight    Int
@@ -23,6 +23,7 @@ model Pokemon {
 
 model Ability {
   cuid  String    @id @default(cuid())
+  id    Int       @unique
   name  String
   url   String
   users Pokemon[]
@@ -30,6 +31,7 @@ model Ability {
 
 model Move {
   cuid  String    @id @default(cuid())
+  id    Int       @unique
   name  String
   url   String
   users Pokemon[]
