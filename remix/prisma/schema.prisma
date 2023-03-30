@@ -1,0 +1,35 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Ability {
+  cuid    String    @id
+  id      Int       @unique
+  name    String
+  url     String
+  Pokemon Pokemon[]
+}
+
+model Move {
+  cuid    String    @id
+  id      Int       @unique
+  name    String
+  url     String
+  Pokemon Pokemon[]
+}
+
+model Pokemon {
+  cuid      String    @id
+  id        Int       @unique
+  name      String    @unique
+  height    Int
+  weight    Int
+  spriteUrl String
+  Ability   Ability[]
+  Move      Move[]
+}
