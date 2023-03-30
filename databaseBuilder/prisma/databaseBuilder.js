@@ -18,11 +18,9 @@ async function buildOneFiftyOriginal() {
       let searchIndex = url.length - 2;
       while (searchingForFirstSlash) {
         if (url[searchIndex] === "/") {
-          console.log("char is", url[searchIndex]);
           searchingForFirstSlash = false;
           abilityId = Number(url.slice(searchIndex + 1).slice(0, -1));
         } else {
-          console.log("char is", url[searchIndex]);
           searchIndex--;
         }
       }
